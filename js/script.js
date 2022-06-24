@@ -1,3 +1,5 @@
+const span=document.querySelector("span");
+
 const kartTemplate = `
     <div class="kart-cerceve">
         <div class="kart-onyuz">
@@ -72,6 +74,10 @@ function kartTiklama(olay) {
         //İki açık kart arasında eşleşme var.
         acikKart.classList.add("eslesti");
         secilenKart.classList.add("eslesti");
+        
+        const tumEslesenler = document.querySelectorAll(".eslesti");
+        let eslesenSayisi=tumEslesenler.length/2;
+        span.innerHTML=eslesenSayisi;
 
         acikKart.classList.remove("acik");
         secilenKart.classList.remove("acik");
