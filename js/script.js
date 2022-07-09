@@ -17,6 +17,36 @@ const fotoNumaralari = [
     10, 40, 40, 30
 ];
 
+//Ödev 15 görev 2
+//fotonumaralari elemanlarını atamak amacıyla rastgele sayı fonksiyonu yaratıldı
+function rastgeleSayi(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); 
+}
+
+//fotonumaralari elemanlarının yerlerini değiştirmek amacıyla shuffleArray fonksiyonunu yaratıldı
+//kaynak: stackoverflow
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+//fotoNumaralari dizisinin yeniden yaratılması rastgeleSayi ve shuffleArray fonksiyonlarından yararklanılarak reWrite fonksiyonu yaratıldı
+function reWrite(fotoNumaralari){
+    fotoNumaralari.splice((fotoNumaralari.length/2),fotoNumaralari.length);
+   
+    for(let i=0;i<(fotoNumaralari.length/2);i++){
+        fotoNumaralari[i]=rastgeleSayi(1, 99);
+        fotoNumaralari.push(fotoNumaralari[i]);
+    }
+
+    return shuffleArray(fotoNumaralari);
+}
+reWrite(fotoNumaralari);
+
 for (fotoNumara of fotoNumaralari) {
     const yenikart = document.createElement("div");
     yenikart.innerHTML = kartTemplate;
