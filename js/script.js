@@ -78,6 +78,20 @@ function kartTiklama(olay) {
         const tumEslesenler = document.querySelectorAll(".eslesti");
         let eslesenSayisi=tumEslesenler.length/2;
         span.innerHTML=eslesenSayisi;
+        
+                //odev 15 görev 1
+                //Karar yapısı oluşturularak eşleşmeler tamamlandığında 5 saniye ekranda kalacak görsel için fonksiyon oluşturuldu
+                if(eslesenSayisi==4){
+
+                    let makeGif=document.createElement("img");
+                    makeGif.src="tebrikler4.gif";
+                    makeGif.classList.add("win");
+                    document.querySelector("body").append(makeGif);
+
+                    setTimeout(()=>{
+                        makeGif.style.display="none"
+                    }, 5000);
+                }
 
         acikKart.classList.remove("acik");
         secilenKart.classList.remove("acik");
