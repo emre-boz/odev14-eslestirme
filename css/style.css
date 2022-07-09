@@ -40,3 +40,14 @@ div#oyun-cerceve {
   .kart-arkayuz {
     transform: rotateY(180deg);
   }
+
+  .win{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: block;
+    margin: auto; 
+  }
